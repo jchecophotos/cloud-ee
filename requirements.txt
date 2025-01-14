@@ -7,3 +7,6 @@ oci
 
 # Proxmox
 proxmoxer
+
+# Linting
+ansible-lint
