@@ -2,6 +2,7 @@
 name: Build CI on Schedule
 
 "on":
+  workflow_dispatch:
   schedule:
     - cron: '0 2 * * 1,4'
 
@@ -43,7 +44,7 @@ jobs:
         with:
           registry: ${{ env.REGISTRY }}
           username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_PASSWORD }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Create a vEnv
         run: python3 -m venv ~/venv
